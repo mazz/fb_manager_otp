@@ -14,7 +14,8 @@ defmodule FbManagerOtp.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:ffnerd, :logger]
+      extra_applications: [:ffnerd, :logger],
+      mod: {FbManagerOtp.Application, []}
     ]
   end
 
