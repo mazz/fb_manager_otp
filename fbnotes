@@ -24,3 +24,4 @@ FbManagerOtp.Server.team
 Process.whereis(:fb_manager) |> Process.exit(:kill)
 FbManagerOtp.Server.team
 
+mix run --no-halt # run forever
