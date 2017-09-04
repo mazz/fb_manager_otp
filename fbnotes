@@ -1,0 +1,2 @@
+Process.whereis(:name)
+Process.whereis(:name) |> Process.exit(:kill)
