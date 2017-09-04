@@ -1,2 +1,26 @@
-Process.whereis(:name)
-Process.whereis(:name) |> Process.exit(:kill)
+iex -S mix
+
+FbManagerOtp.Supervisor.start_link
+FbManagerOtp.Server.start_link
+FbManagerOtp.Server.add("Russell Wilson")
+FbManagerOtp.Server.add("Doug Baldwin")
+FbManagerOtp.Server.team
+FbManagerOtp.Server.remove("Doug Baldwin")
+FbManagerOtp.Server.team
+
+Process.whereis(:fb_manager)
+Process.whereis(:fb_manager) |> Process.exit(:kill)
+
+
+## mix.exs, add to `applications do`
+
+|      mod: {FbManagerOtp.Application, []}
+
+iex -S mix
+
+FbManagerOtp.Server.add("Russell Wilson") # did not need to call start_link
+:observer.start
+FbManagerOtp.Server.team
+Process.whereis(:fb_manager) |> Process.exit(:kill)
+FbManagerOtp.Server.team
+

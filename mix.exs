@@ -15,7 +15,7 @@ defmodule FbManagerOtp.Mixfile do
   def application do
     [
       extra_applications: [:ffnerd, :logger],
-      mod: {FbManagerOtp.Application, []}
+      # mod: {FbManagerOtp.Application, []}
     ]
   end
 

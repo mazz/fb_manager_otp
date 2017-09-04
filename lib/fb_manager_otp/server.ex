@@ -15,7 +15,7 @@ defmodule FbManagerOtp.Server do
     GenServer.cast(:fb_manager, {:remove, name})
   end
 
-  def team(pid) do
+  def team() do
     GenServer.call(:fb_manager, :team)
   end
 
@@ -28,7 +28,7 @@ defmodule FbManagerOtp.Server do
   def handle_cast({:add, name}, state) do
     client = FFNerd.Client.new("hrqevq4h55mt")
     player = FFNerd.Player.find(name, client)
-    new_state = Map.put(state, name, player)
+    new_state = Map.put(state, name, player)    
     {:noreply, new_state}
   end
 
